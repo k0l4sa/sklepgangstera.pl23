@@ -105,6 +105,54 @@
       border: 0;
       white-space: nowrap;
     }
+
+    /* ── SUBSCRIBER COUNTER ────────────────── */
+    .subscriber-counter {
+      text-align: center;
+      margin-top: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--cement);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .subscriber-counter.loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .subscriber-counter .counter-number {
+      color: var(--kanarek);
+      font-weight: 700;
+      font-size: 0.82rem;
+      display: inline-block;
+      min-width: 1.5em;
+      transition: transform 0.3s ease;
+    }
+    .subscriber-counter .counter-number.bump {
+      animation: counterBump 0.4s ease;
+    }
+    @keyframes counterBump {
+      0%   { transform: scale(1); }
+      40%  { transform: scale(1.35); color: var(--kanarek-luz); }
+      100% { transform: scale(1); }
+    }
+
+    /* ── FORM ERROR MESSAGE ───────────────── */
+    .form-error {
+      display: none;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--krew);
+      margin-top: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+    .form-error.visible {
+      display: block;
+      animation: fadeSlideUp 0.3s ease both;
+    }
   </style>
 </head>
 <body>
@@ -219,12 +267,18 @@
           <p class="form-fine-print">
             Zero spamu. Zero naganiaczy. &nbsp;<a href="#" tabindex="-1">Polityka prywatności</a>.
           </p>
+          <p class="form-error" id="form-error" role="alert" aria-live="polite"></p>
         </form>
 
         <div class="form-success" id="form-success" role="alert" aria-live="polite">
           <div class="check-icon" aria-hidden="true">✦</div>
           <p>Jesteś w Układzie, Wspólniku.</p>
           <span>Dostaniesz maila pierwsza/pierwszy. Drzwi stoją otworem tylko dla Ciebie.</span>
+        </div>
+
+        <!-- ── SUBSCRIBER COUNTER ──────────── -->
+        <div class="subscriber-counter" id="subscriber-counter" aria-live="polite">
+          ✦ Zaufało nam już <span class="counter-number" id="subscriber-count">…</span> osób
         </div>
 
         <!-- ── ZASADY GRY ──────────────────── -->
@@ -248,7 +302,7 @@
           <div class="av">+</div>
         </div>
         <p class="social-text">
-          <strong>2 847 Wspólników</strong> już w Układzie.<br>
+          <strong><span id="social-proof-count">…</span> Wspólników</strong> już w Układzie.<br>
           Ty możesz być następny.
         </p>
       </div>
@@ -360,42 +414,142 @@
       setInterval(tick, 1000);
     })();
 
+    /* === GOOGLE SHEETS INTEGRATION ======== */
+    /* ⚠️ URL wygenerowany automatycznie przez Clasp */
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzN2BVU0xpxfMI7NIc5-eIaGHERMxdhn0Q8qFDjbR60urnPbumGNzjGxl2hLdeWt6-C9g/exec';
+
+    /* === SUBSCRIBER COUNTER — LOAD ======== */
+    (function() {
+      const counterEl      = document.getElementById('subscriber-count');
+      const counterWrap    = document.getElementById('subscriber-counter');
+      const socialCountEl  = document.getElementById('social-proof-count');
+
+      function formatCount(n) {
+        return n.toLocaleString('pl-PL');
+      }
+
+      function updateCounterUI(count) {
+        const formatted = formatCount(count);
+        counterEl.textContent = formatted;
+        socialCountEl.textContent = formatted;
+        counterWrap.classList.add('loaded');
+      }
+
+      // Pobierz aktualny stan przy wejściu na stronę
+      if (GOOGLE_SCRIPT_URL !== 'TUTAJ_WKLEJ_URL_GOOGLE_APPS_SCRIPT') {
+        fetch(GOOGLE_SCRIPT_URL)
+          .then(r => r.json())
+          .then(data => {
+            if (data.status === 'ok' && typeof data.count === 'number') {
+              window.__subscriberCount = data.count;
+              updateCounterUI(data.count);
+            }
+          })
+          .catch(() => {
+            // Fallback — ukryj counter jeśli brak połączenia
+            counterWrap.style.display = 'none';
+          });
+      }
+
+      // Eksportuj funkcje do użytku z formularza
+      window.__updateCounter = updateCounterUI;
+    })();
+
     /* === FORM SUBMIT ===================== */
     (function() {
       const form    = document.getElementById('waitlist-form');
       const success = document.getElementById('form-success');
       const input   = document.getElementById('email-input');
       const btn     = document.getElementById('waitlist-submit-btn');
+      const errorEl = document.getElementById('form-error');
+      const counterNumEl = document.getElementById('subscriber-count');
+
+      const btnOrigText = btn.textContent;
+
+      function showError(msg) {
+        errorEl.textContent = msg;
+        errorEl.classList.add('visible');
+      }
+
+      function hideError() {
+        errorEl.classList.remove('visible');
+      }
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
+        hideError();
 
         const email = input.value.trim();
-        if (!email || !email.includes('@')) {
+        if (!email || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
           input.style.borderColor = '#8c1c13';
           input.focus();
+          showError('Wpisz poprawny adres email, Wspólniku.');
           return;
         }
 
         input.style.borderColor = '';
-        btn.textContent = '...';
+        btn.textContent = 'Łączenie...';
         btn.disabled = true;
 
-        setTimeout(() => {
-          form.style.display = 'none';
-          success.classList.add('visible');
+        // Wyślij do Google Sheets
+        if (GOOGLE_SCRIPT_URL === 'TUTAJ_WKLEJ_URL_GOOGLE_APPS_SCRIPT') {
+          // Dev fallback — brak skonfigurowanego URL
+          setTimeout(() => {
+            form.style.display = 'none';
+            success.classList.add('visible');
+          }, 900);
+          return;
+        }
 
-          try {
-            const emails = JSON.parse(localStorage.getItem('sg_waitlist') || '[]');
-            if (!emails.includes(email)) {
-              emails.push(email);
-              localStorage.setItem('sg_waitlist', JSON.stringify(emails));
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify({ email: email })
+        })
+        .then(r => r.json())
+        .then(data => {
+          if (data.status === 'ok' || data.status === 'duplicate') {
+            form.style.display = 'none';
+            success.classList.add('visible');
+
+            // Zaktualizuj komunikat dla duplikatu
+            if (data.status === 'duplicate') {
+              success.querySelector('p').textContent = data.message;
+              success.querySelector('span').textContent = 'Ten email jest już w naszej bazie. Czekaj na drop!';
             }
-          } catch(err) {}
-        }, 900);
+
+            // Aktualizuj counter na żywo
+            if (typeof data.count === 'number' && window.__updateCounter) {
+              window.__updateCounter(data.count);
+              // Animacja bump
+              counterNumEl.classList.add('bump');
+              setTimeout(() => counterNumEl.classList.remove('bump'), 500);
+            }
+
+            // Zapisz lokalnie jako backup
+            try {
+              const emails = JSON.parse(localStorage.getItem('sg_waitlist') || '[]');
+              if (!emails.includes(email)) {
+                emails.push(email);
+                localStorage.setItem('sg_waitlist', JSON.stringify(emails));
+              }
+            } catch(err) {}
+          } else {
+            // Błąd walidacji z serwera
+            btn.textContent = btnOrigText;
+            btn.disabled = false;
+            showError(data.message || 'Coś poszło nie tak. Spróbuj ponownie.');
+          }
+        })
+        .catch(err => {
+          btn.textContent = btnOrigText;
+          btn.disabled = false;
+          showError('Brak połączenia z serwerem. Spróbuj za chwilę.');
+        });
       });
 
       input.addEventListener('input', function() {
+        hideError();
         if (this.style.borderColor === 'rgb(140, 28, 19)') {
           this.style.borderColor = '';
         }
