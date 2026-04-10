@@ -11,6 +11,9 @@
   <link rel="canonical" href="https://sklepgangstera.pl">
   <link rel="stylesheet" href="style1.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐤</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* ── KANAREK IMAGE ─────────────────────── */
     .kanarek-hero-img {
@@ -188,8 +191,10 @@
         src="kanarek.png"
         alt="Złoty Kanarek — logo sklepgangstera.pl"
         class="kanarek-hero-img"
+        width="180"
+        height="180"
         fetchpriority="high"
-        decoding="async"
+        decoding="sync"
       >
 
       <!-- H1 — Nowe hasło marki -->
@@ -411,7 +416,15 @@
       }
 
       tick();
-      setInterval(tick, 1000);
+      let lastTick = 0;
+      function loop(time) {
+        if (time - lastTick >= 1000) {
+          tick();
+          lastTick = time;
+        }
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
     })();
 
     /* === GOOGLE SHEETS INTEGRATION ======== */

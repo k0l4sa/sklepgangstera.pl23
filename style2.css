@@ -3,7 +3,7 @@
    Full E-Commerce Store (index2.html)
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap');
+
 
 /* ── CSS VARIABLES ─────────────────────────── */
 :root {
@@ -247,6 +247,8 @@ a {
   object-fit: cover;
   filter: grayscale(20%) contrast(1.05);
   transition: transform 8s ease;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .hero-media:hover .hero-img {
