@@ -3,24 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sklepgangstera.pl — Wejdź do Rodziny | Drop I 2025</title>
-  <meta name="description" content="Ironiczny dom mody z polskim rodowodem. Kaszmirowe kominiarski, 500GSM bluzy. Materiały jak paryski dom mody, klimat jak Ursynów. Zapisz się na premierowy drop.">
-  <meta property="og:title" content="sklepgangstera.pl — Luksus z Blokowiska">
-  <meta property="og:description" content="Wejdź do Rodziny. Pierwszy Drop już wkrótce.">
+  <title>sklepgangstera.pl — Złoty Standard Ulicy | Drop Kolekcja Konsekwencja</title>
+  <meta name="description" content="Kolekcja Konsekwencja — tylko 444 sztuki. Bluzy, koszulki, snapbacki z precyzyjnym haftem Złotego Kanarka. Zapisz się na drop 1 maja 01:05.">
+  <meta property="og:title" content="sklepgangstera.pl — Złoty Standard Ulicy">
+  <meta property="og:description" content="Kolekcja Konsekwencja. Tylko 444 sztuki. Drop 1 maja 01:05. Okienko do 5 maja 23:50.">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://sklepgangstera.pl">
   <link rel="stylesheet" href="style1.css">
-  <!-- Favicon placeholder -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖤</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐤</text></svg>">
+  <style>
+    /* ── KANAREK IMAGE ─────────────────────── */
+    .kanarek-hero-img {
+      width: clamp(100px, 18vw, 180px);
+      height: clamp(100px, 18vw, 180px);
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid rgba(201, 168, 76, 0.5);
+      box-shadow: 0 0 40px rgba(201, 168, 76, 0.25), 0 0 80px rgba(201, 168, 76, 0.08);
+      margin: 0 auto 2rem;
+      display: block;
+      animation: fadeSlideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    /* ── STICKY FOMO BANNER ────────────────── */
+    .scarcity-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--kanarek);
+      color: var(--asfalt);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0.65rem 1rem;
+      font-weight: 700;
+    }
+
+    /* ── COLLECTION PREVIEW ────────────────── */
+    .collection-preview {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2rem 0 3rem;
+      animation: fadeSlideUp 0.9s cubic-bezier(0.4,0,0.2,1) 0.25s both;
+    }
+
+    .col-pill {
+      background: var(--betoniarz);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: var(--kaszmirowy);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      padding: 0.55rem 1.1rem;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .col-pill-icon {
+      font-size: 1rem;
+    }
+
+    /* ── CTA TEXT ──────────────────────────── */
+    .form-cta-text {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--kanarek);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── EASTER EGG / MANIFESTO ──────────────────*/
+    .easter-egg {
+      margin-top: 4rem;
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--grys);
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--cement);
+      letter-spacing: 0.08em;
+    }
+
+    .easter-egg span {
+      color: rgba(201, 168, 76, 0.5);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- ── STICKY SCARCITY BANNER ──────────────── -->
+  <div class="scarcity-banner" role="status" aria-live="polite">
+    ✦ &nbsp; Kolekcja Konsekwencja — tylko 444 sztuki &nbsp; · &nbsp; Premiera: 1 maja, 01:05 &nbsp; · &nbsp; Okienko do 5 maja 23:50 &nbsp; ✦
+  </div>
 
   <!-- ── NAVBAR ─────────────────────────── -->
   <nav class="navbar" role="navigation" aria-label="Nawigacja główna">
     <a href="#" class="navbar-logo" aria-label="sklepgangstera.pl strona główna">
       SKLEP<span>GANGSTERA</span>.PL
     </a>
-    <span class="navbar-tag">DROP I — COMING SOON</span>
+    <span class="navbar-tag">KOLEKCJA KONSEKWENCJA — DROP I</span>
   </nav>
 
   <!-- ── HERO ───────────────────────────── -->
@@ -33,25 +132,51 @@
 
       <!-- Eyebrow -->
       <div class="hero-eyebrow" role="text">
-        Kolekcja Założycielska &nbsp;·&nbsp; Limitowany Drop
+        Kolekcja Konsekwencja &nbsp;·&nbsp; Limitowany Drop &nbsp;·&nbsp; 444 Sztuki
       </div>
 
-      <!-- Headline -->
+      <!-- Złoty Kanarek -->
+      <img
+        src="kanarek.png"
+        alt="Złoty Kanarek — logo sklepgangstera.pl"
+        class="kanarek-hero-img"
+        fetchpriority="high"
+        decoding="async"
+      >
+
+      <!-- H1 — Nowe hasło marki -->
       <h1 class="hero-headline" id="hero-headline">
-        Luksus<br>
-        z <span class="gold">Blokowiska</span>.
+        Złoty<br>
+        <span class="gold">Standard</span><br>
+        Ulicy.
       </h1>
 
       <!-- Sub copy -->
       <p class="hero-sub">
-        Kaszmirowa kominiarka dla człowieka, który wie, że jakoś
-        się nie krzyczy. <strong>Gangsta na Lata.</strong>
-        Pierwszy Drop — liczba miejsc ograniczona jak egzemplarzy
-        dobrej broni.
+        Kolekcja <strong>Konsekwencja</strong> — mięsiste, ciężkie materiały
+        o wysokiej gramaturze. Precyzyjny haft Złotego Kanarka na piersi.
+        Dedykowane nadruki na karku. Ściśle limitowana pula:
+        <strong>tylko 444 sztuki.</strong>
       </p>
 
+      <!-- Collection preview pills -->
+      <div class="collection-preview" role="list" aria-label="Asortyment kolekcji">
+        <div class="col-pill" role="listitem">
+          <span class="col-pill-icon">🧥</span>
+          Bluzy z Kapturem
+        </div>
+        <div class="col-pill" role="listitem">
+          <span class="col-pill-icon">👕</span>
+          Koszulki do Grilla
+        </div>
+        <div class="col-pill" role="listitem">
+          <span class="col-pill-icon">🧢</span>
+          Snapbacki
+        </div>
+      </div>
+
       <!-- Countdown -->
-      <div class="countdown-wrap" aria-label="Odliczanie do premiery">
+      <div class="countdown-wrap" aria-label="Odliczanie do premiery — 1 maja 01:05">
         <div class="countdown-item">
           <div class="countdown-num" id="cd-days">00</div>
           <div class="countdown-label">Dni</div>
@@ -70,6 +195,9 @@
         </div>
       </div>
 
+      <!-- CTA text -->
+      <p class="form-cta-text">↓ Zapisz się — wejdź z drzwiami w twarz reszcie ↓</p>
+
       <!-- Waitlist Form -->
       <div class="waitlist-form">
         <form id="waitlist-form" novalidate>
@@ -85,19 +213,28 @@
               aria-required="true"
             >
             <button type="submit" class="form-btn" id="waitlist-submit-btn">
-              Wejdź do Rodziny
+              Wejdź z Drzwiami
             </button>
           </div>
           <p class="form-fine-print">
-            Zero spamu. Zero naganiaczy. Tylko Szefowie dowiadują się pierwsi.
-            <a href="#" tabindex="-1">Polityka prywatności</a>.
+            Zero spamu. Zero naganiaczy. &nbsp;<a href="#" tabindex="-1">Polityka prywatności</a>.
           </p>
         </form>
 
         <div class="form-success" id="form-success" role="alert" aria-live="polite">
           <div class="check-icon" aria-hidden="true">✦</div>
           <p>Jesteś w Układzie, Wspólniku.</p>
-          <span>Dostaniesz maila pierwsza/pierwszy. Przed wszystkimi innymi.</span>
+          <span>Dostaniesz maila pierwsza/pierwszy. Drzwi stoją otworem tylko dla Ciebie.</span>
+        </div>
+
+        <!-- ── ZASADY GRY ──────────────────── -->
+        <div class="zasady-gry" role="note" aria-label="Zasady dostępu do dropu">
+          <div class="zasady-gry-icon" aria-hidden="true">✦</div>
+          <div class="zasady-gry-text">
+            <strong>Zostaw maila.</strong> Otrzymasz powiadomienie 1 maja o 01:05.<br>
+            Okienko sprzedażowe trwa <strong>tylko do 5 maja, godz. 23:50</strong>.<br>
+            Potem kolekcja znika na zawsze.
+          </div>
         </div>
       </div>
 
@@ -121,49 +258,35 @@
 
   <!-- ── PRODUCT TEASER ─────────────────── -->
   <section class="teaser" aria-labelledby="teaser-heading">
-    <div class="teaser-label">Podgląd Kolekcji</div>
+    <div class="teaser-label">Kolekcja Konsekwencja — Podgląd</div>
     <h2 id="teaser-heading" style="font-family: var(--font-head); font-size: clamp(1.6rem,4vw,2.5rem); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 0.5rem;">
       Co dostaje Rodzina.
     </h2>
     <p style="color: var(--cement); font-size: 0.9rem; max-width: 480px; margin: 0 auto;">
-      Pięć przedmiotów. Zero kompromisów. Każdy ze Złotym Szwem Kanarku w środku.
+      Trzy produkty. Ciężkie materiały. Haft Złotego Kanarka na piersi i nadruk na karku.
     </p>
 
     <div class="teaser-products" role="list">
 
       <article class="teaser-product" role="listitem">
-        <div class="tp-tag">#001-DW</div>
-        <div class="tp-name">Kominiarka<br>"Don Wiśnia"</div>
-        <div class="tp-price">890 PLN</div>
-        <div class="blur-badge">Kaszmir 100%</div>
+        <div class="tp-tag">#001-KONSEKWENCJA</div>
+        <div class="tp-name">Bluza<br>"Majowy Wieczór"</div>
+        <div class="tp-price">— PLN</div>
+        <div class="blur-badge">500 GSM Premium</div>
       </article>
 
       <article class="teaser-product" role="listitem">
-        <div class="tp-tag">#002-AU</div>
-        <div class="tp-name">Bluza<br>"Alibaba z Ursynowa"</div>
-        <div class="tp-price">490 PLN</div>
-        <div class="blur-badge">500 GSM Egypt</div>
-      </article>
-
-      <article class="teaser-product" role="listitem">
-        <div class="tp-tag">#003-SSN</div>
-        <div class="tp-name">Skarpety<br>"Szef Się Nie..."</div>
-        <div class="tp-price">120 PLN</div>
-        <div class="blur-badge">Jedwab 15%</div>
-      </article>
-
-      <article class="teaser-product" role="listitem">
-        <div class="tp-tag">#004-SD</div>
-        <div class="tp-name">Czapka<br>"Szef Dzielnicy"</div>
-        <div class="tp-price">280 PLN</div>
-        <div class="blur-badge">Merino Wool</div>
-      </article>
-
-      <article class="teaser-product" role="listitem">
-        <div class="tp-tag">#005-UZ</div>
-        <div class="tp-name">Koszulka<br>"Układ Zamknięty"</div>
-        <div class="tp-price">340 PLN</div>
+        <div class="tp-tag">#002-KONSEKWENCJA</div>
+        <div class="tp-name">Koszulka<br>"Grill Master"</div>
+        <div class="tp-price">— PLN</div>
         <div class="blur-badge">Supima Cotton</div>
+      </article>
+
+      <article class="teaser-product" role="listitem">
+        <div class="tp-tag">#003-KONSEKWENCJA</div>
+        <div class="tp-name">Snapback<br>"Złoty Standard"</div>
+        <div class="tp-price">— PLN</div>
+        <div class="blur-badge">Wool Blend</div>
       </article>
 
     </div>
@@ -185,17 +308,28 @@
       <a href="#">Regulamin</a> &nbsp;·&nbsp;
       Made in Poland. With Attitude.
     </p>
+    <!-- Easter egg / manifest -->
+    <div class="easter-egg">
+      <span>// easter egg:</span> Nie ma czegoś takiego jak kaszmirowa kominiarka.
+    </div>
   </footer>
 
   <!-- ── SCRIPTS ────────────────────────── -->
   <script>
-    /* === COUNTDOWN ======================= */
+    /* === COUNTDOWN — 1 maja najbliższy, 01:05 === */
     (function() {
-      // Drop date: 31 dni od dziś
-      const dropDate = new Date();
-      dropDate.setDate(dropDate.getDate() + 31);
-      dropDate.setHours(20, 0, 0, 0);
+      function getNextMay1st() {
+        const now = new Date();
+        // Najbliższy 1 maja, godzina 01:05:00
+        let target = new Date(now.getFullYear(), 4, 1, 1, 5, 0, 0); // miesiąc 4 = maj (0-indexed)
+        if (now >= target) {
+          // Już minął — ustaw na przyszły rok
+          target = new Date(now.getFullYear() + 1, 4, 1, 1, 5, 0, 0);
+        }
+        return target;
+      }
 
+      const dropDate = getNextMay1st();
       const pad = n => String(n).padStart(2, '0');
 
       function tick() {
@@ -203,10 +337,11 @@
         const diff = dropDate - now;
 
         if (diff <= 0) {
-          document.getElementById('cd-days').textContent  = '00';
-          document.getElementById('cd-hours').textContent = '00';
-          document.getElementById('cd-mins').textContent  = '00';
-          document.getElementById('cd-secs').textContent  = '00';
+          ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
+            document.getElementById(id).textContent = '00';
+          });
+          // Drop live — redirect do sklepu
+          // window.location.href = 'index2.html';
           return;
         }
 
@@ -242,19 +377,14 @@
           return;
         }
 
-        // Reset border
         input.style.borderColor = '';
-
-        // Loading state
         btn.textContent = '...';
         btn.disabled = true;
 
-        // Simulate API call (replace with real endpoint)
         setTimeout(() => {
           form.style.display = 'none';
           success.classList.add('visible');
 
-          // Store locally as fallback
           try {
             const emails = JSON.parse(localStorage.getItem('sg_waitlist') || '[]');
             if (!emails.includes(email)) {
@@ -265,7 +395,6 @@
         }, 900);
       });
 
-      // Real-time validation feedback
       input.addEventListener('input', function() {
         if (this.style.borderColor === 'rgb(140, 28, 19)') {
           this.style.borderColor = '';
@@ -303,7 +432,5 @@
       }, { passive: true });
     })();
   </script>
-  <!-- Screen reader only style -->
-  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;white-space:nowrap}</style>
 </body>
 </html>

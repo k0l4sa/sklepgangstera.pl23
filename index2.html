@@ -3,494 +3,1866 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sklepgangstera.pl — Kolekcja Założycielska | Premium Streetwear</title>
-  <meta name="description" content="Ironiczny dom mody z polskim rodowodem. Kaszmirowe kominiarski, 500GSM bluzy, Supima Cotton. Kolekcja Założycielska. Gangsta na Lata.">
-  <meta property="og:title" content="sklepgangstera.pl — Luksus z Blokowiska">
-  <meta property="og:description" content="Materiały jak paryski dom mody. Klimat jak Ursynów. Kolekcja Założycielska — Drop I 2025.">
+  <title>sklepgangstera.pl — Kolekcja Konsekwencja | Drop Live</title>
+  <meta name="description" content="Kolekcja Konsekwencja — shop live. Bluza, T-shirt, Snapback. Tylko 444 sztuki. Okienko do 5 maja 23:50.">
+  <meta property="og:title" content="sklepgangstera.pl — Złoty Standard Ulicy | Drop Live">
+  <meta property="og:description" content="Kolekcja Konsekwencja. 444 sztuki. Okienko 1–5 maja. Kup teraz.">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://sklepgangstera.pl/sklep">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖤</text></svg>">
+  <link rel="canonical" href="https://sklepgangstera.pl">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐤</text></svg>">
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ClothingStore",
     "name": "sklepgangstera.pl",
-    "description": "Premium ironic streetwear brand. Polish luxury fashion.",
+    "description": "Premium streetwear. Kolekcja Konsekwencja — Złoty Standard Ulicy.",
     "url": "https://sklepgangstera.pl",
-    "priceRange": "120–890 PLN"
+    "priceRange": "PLN"
   }
   </script>
 
-  <link rel="stylesheet" href="style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+/* ════════════════════════════════════════════
+   RESET & VARIABLES
+   ════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+:root {
+  --asfalt:       #0f0f0f;
+  --betoniarz:    #161616;
+  --grys:         #2a2a2a;
+  --cement:       #6b6b6b;
+  --kaszmirowy:   #f0ede8;
+  --kanarek:      #c9a84c;
+  --kanarek-luz:  #e8c96a;
+  --kanarek-dark: #a8893a;
+
+  --font-head: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  --radius: 4px;
+  --radius-lg: 8px;
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-w: 1200px;
+
+  /* Layout offsets */
+  --fomo-h: 56px;
+  --nav-h: 60px;
+  --total-top: calc(var(--fomo-h) + var(--nav-h));
+}
+
+body {
+  background: var(--asfalt);
+  color: var(--kaszmirowy);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a   { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ════════════════════════════════════════════
+   SKIP LINK
+   ════════════════════════════════════════════ */
+.skip-link {
+  position: absolute;
+  top: -100%; left: 1rem;
+  background: var(--kanarek); color: var(--asfalt);
+  padding: 0.5rem 1rem; font-weight: 700;
+  z-index: 9999; border-radius: var(--radius);
+  font-family: var(--font-mono);
+}
+.skip-link:focus { top: 0.5rem; }
+
+/* ════════════════════════════════════════════
+   FOMO COUNTDOWN BANNER (sticky top)
+   ════════════════════════════════════════════ */
+.fomo-bar {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  background: var(--kanarek);
+  color: var(--asfalt);
+  height: var(--fomo-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.fomo-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+}
+
+.fomo-dot {
+  width: 8px; height: 8px;
+  background: var(--asfalt);
+  border-radius: 50%;
+  animation: pulse-dot 1.3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.6); }
+}
+
+.fomo-timer {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.fomo-unit {
+  background: rgba(0,0,0,0.15);
+  border-radius: 3px;
+  padding: 0.2rem 0.45rem;
+  font-size: 0.82rem;
+  min-width: 28px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.fomo-sep {
+  font-weight: 400;
+  opacity: 0.6;
+  margin: 0 0.05rem;
+}
+
+.fomo-bar-right {
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+/* ════════════════════════════════════════════
+   NAVBAR
+   ════════════════════════════════════════════ */
+.navbar {
+  position: sticky;
+  top: var(--fomo-h);
+  z-index: 400;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(15,15,15,0.96);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+}
+
+.navbar-logo {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-logo img {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.4);
+  object-fit: cover;
+}
+
+.navbar-logo .g { color: var(--kanarek); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(240,237,232,0.6);
+  transition: color var(--transition);
+  letter-spacing: 0.02em;
+}
+.nav-links a:hover { color: var(--kaszmirowy); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 1px solid var(--grys);
+  color: var(--kaszmirowy);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  transition: border-color var(--transition), background var(--transition);
+  position: relative;
+}
+.cart-btn:hover {
+  border-color: var(--kanarek);
+  background: rgba(201,168,76,0.05);
+}
+
+.cart-count {
+  background: var(--kanarek);
+  color: var(--asfalt);
+  font-size: 0.6rem;
+  font-weight: 700;
+  width: 17px; height: 17px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: var(--kaszmirowy);
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--kaszmirowy);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ════════════════════════════════════════════
+   HERO — minimal brand statement
+   ════════════════════════════════════════════ */
+.page-hero {
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--grys);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.page-hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--kanarek);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.page-hero-eyebrow::before,
+.page-hero-eyebrow::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 40px;
+  background: rgba(201,168,76,0.4);
+}
+
+.page-hero-kanarek {
+  width: clamp(60px, 10vw, 100px);
+  height: clamp(60px, 10vw, 100px);
+  border-radius: 50%;
+  border: 2px solid rgba(201,168,76,0.5);
+  box-shadow: 0 0 30px rgba(201,168,76,0.15);
+  object-fit: cover;
+  margin: 0 auto 1.5rem;
+}
+
+.page-hero h1 {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  margin-bottom: 1.25rem;
+}
+
+.page-hero h1 span { color: var(--kanarek); }
+
+.page-hero-sub {
+  font-size: 0.95rem;
+  color: var(--cement);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ════════════════════════════════════════════
+   PRODUCT SECTION
+   ════════════════════════════════════════════ */
+.products-wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+.products-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.products-heading .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  color: var(--kanarek);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.products-heading h2 {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: -0.04em;
+}
+
+/* ── PRODUCT GRID ────────────────────────── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ── PRODUCT CARD ────────────────────────── */
+.p-card {
+  background: var(--betoniarz);
+  border: 1px solid var(--grys);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition), transform var(--transition);
+  position: relative;
+}
+
+.p-card:hover {
+  border-color: rgba(201,168,76,0.35);
+  transform: translateY(-4px);
+}
+
+/* ── Card Badge ── */
+.p-badge {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  z-index: 3;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 2px;
+  background: var(--kanarek);
+  color: var(--asfalt);
+  font-weight: 700;
+}
+
+/* ── Card Image placeholder ── */
+.p-img-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--grys);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-img-placeholder {
+  font-size: 5rem;
+  opacity: 0.5;
+  user-select: none;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+}
+
+.p-card:hover .p-img-placeholder {
+  transform: scale(1.08);
+  opacity: 0.7;
+}
+
+/* Color-aware image tinting */
+.p-img-wrap[data-color="white"] {
+  background: #e8e5e0;
+}
+.p-img-wrap[data-color="white"] .p-img-placeholder {
+  filter: brightness(0.3);
+}
+
+.p-img-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Card Body ── */
+.p-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.p-cat {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  color: var(--kanarek);
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.p-name {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--kaszmirowy);
+}
+
+.p-desc {
+  font-size: 0.82rem;
+  color: var(--cement);
+  line-height: 1.65;
+}
+
+.p-desc strong {
+  color: rgba(240,237,232,0.75);
+  font-weight: 500;
+}
+
+/* ── Color Switcher ── */
+.p-color-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.p-color-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--cement);
+  text-transform: uppercase;
+  min-width: 36px;
+}
+
+.p-color-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.p-color-dot {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color var(--transition), transform var(--transition);
+  position: relative;
+  outline: none;
+}
+
+.p-color-dot:focus-visible {
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.5);
+}
+
+.p-color-dot[data-color="black"] { background: #111; border-color: var(--grys); }
+.p-color-dot[data-color="white"] { background: #e8e5e0; border-color: #ccc; }
+
+.p-color-dot:hover { transform: scale(1.15); }
+
+.p-color-dot.active {
+  border-color: var(--kanarek) !important;
+  box-shadow: 0 0 0 2px rgba(201,168,76,0.25);
+  transform: scale(1.1);
+}
+
+.p-color-name {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--cement);
+  margin-left: 0.25rem;
+  transition: color var(--transition);
+}
+
+/* ── Size Dropdown ── */
+.p-size-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.p-size-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--cement);
+  text-transform: uppercase;
+}
+
+.p-size-select {
+  width: 100%;
+  background: var(--asfalt);
+  border: 1px solid var(--grys);
+  color: var(--kaszmirowy);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  transition: border-color var(--transition);
+  outline: none;
+}
+
+.p-size-select:focus {
+  border-color: var(--kanarek);
+}
+
+.p-size-select option {
+  background: #1a1a1a;
+  color: var(--kaszmirowy);
+}
+
+/* ── Price & CTA ── */
+.p-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--grys);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.p-price {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--kaszmirowy);
+  white-space: nowrap;
+}
+
+.p-price small {
+  font-size: 0.65rem;
+  color: var(--cement);
+  display: block;
+  font-weight: 400;
+}
+
+.btn-add {
+  flex: 1;
+  min-width: 140px;
+  background: var(--kanarek);
+  color: var(--asfalt);
+  border: none;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.btn-add:hover {
+  background: var(--kanarek-luz);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(201,168,76,0.25);
+}
+
+.btn-add:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Sold out state */
+.btn-add:disabled {
+  background: var(--grys);
+  color: var(--cement);
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ════════════════════════════════════════════
+   BRAND STRIP
+   ════════════════════════════════════════════ */
+.brand-strip {
+  border-top: 1px solid var(--grys);
+  border-bottom: 1px solid var(--grys);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  background: var(--betoniarz);
+}
+
+.brand-strip-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.brand-strip-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  color: var(--kanarek);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.brand-strip blockquote {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+  color: var(--kaszmirowy);
+}
+
+.brand-strip blockquote em {
+  color: var(--kanarek);
+  font-style: normal;
+}
+
+.brand-strip-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.brand-pill {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(201,168,76,0.25);
+  color: var(--cement);
+  border-radius: 2px;
+}
+
+/* ════════════════════════════════════════════
+   CART DRAWER
+   ════════════════════════════════════════════ */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  z-index: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+.cart-overlay.open { opacity: 1; pointer-events: auto; }
+
+.cart-drawer {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(400px, 100vw);
+  background: var(--betoniarz);
+  border-left: 1px solid var(--grys);
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  padding: 0;
+  overflow: hidden;
+}
+.cart-drawer.open { transform: translateX(0); }
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px solid var(--grys);
+  flex-shrink: 0;
+}
+
+.cart-title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.cart-close {
+  background: none;
+  border: none;
+  color: var(--cement);
+  font-size: 1.1rem;
+  padding: 0.25rem;
+  transition: color var(--transition);
+}
+.cart-close:hover { color: var(--kaszmirowy); }
+
+.cart-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.75rem;
+  color: var(--cement);
+  padding: 3rem 0;
+}
+.cart-empty-icon { font-size: 2.5rem; opacity: 0.4; }
+.cart-empty-text { font-family: var(--font-head); font-size: 1rem; font-weight: 600; }
+.cart-empty-sub  { font-size: 0.82rem; }
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--grys);
+}
+
+.cart-item-img {
+  width: 64px; height: 64px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--grys);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.cart-item-info { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.cart-item-name {
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cart-item-meta { font-size: 0.75rem; color: var(--cement); }
+
+.cart-item-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.qty-btn {
+  width: 26px; height: 26px;
+  background: var(--grys);
+  border: none;
+  border-radius: 3px;
+  color: var(--kaszmirowy);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.qty-btn:hover { background: var(--kanarek); color: var(--asfalt); }
+
+.qty-num {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  min-width: 18px;
+  text-align: center;
+}
+
+.cart-item-price {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--kanarek);
+  white-space: nowrap;
+}
+
+.cart-foot {
+  padding: 1.5rem 1.75rem;
+  border-top: 1px solid var(--grys);
+  flex-shrink: 0;
+}
+
+.cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.cart-subtotal-label { color: var(--cement); }
+
+.cart-subtotal-amount {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--kaszmirowy);
+}
+
+.btn-checkout {
+  width: 100%;
+  background: var(--kanarek);
+  color: var(--asfalt);
+  border: none;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  transition: background var(--transition), transform var(--transition);
+  letter-spacing: -0.01em;
+}
+
+.btn-checkout:hover {
+  background: var(--kanarek-luz);
+  transform: translateY(-1px);
+}
+
+.cart-note {
+  font-size: 0.72rem;
+  color: var(--cement);
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* ════════════════════════════════════════════
+   TOAST
+   ════════════════════════════════════════════ */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--kaszmirowy);
+  color: var(--asfalt);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  z-index: 900;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════ */
+.site-footer {
+  border-top: 1px solid var(--grys);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+}
+
+.footer-logo span { color: var(--kanarek); }
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.78rem;
+  color: var(--cement);
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: var(--kanarek); }
+
+.footer-bottom {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--cement);
+  letter-spacing: 0.08em;
+}
+
+.footer-easter {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: rgba(107,107,107,0.5);
+}
+
+.footer-easter span { color: rgba(201,168,76,0.35); }
+
+/* ════════════════════════════════════════════
+   MOBILE NAV DRAWER
+   ════════════════════════════════════════════ */
+.mobile-nav {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 280px;
+  background: var(--betoniarz);
+  border-right: 1px solid var(--grys);
+  z-index: 800;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 2rem;
+}
+
+.mobile-nav.open { transform: translateX(0); }
+
+.mobile-nav-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav-logo {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: -0.02em;
+}
+
+.mobile-nav-close {
+  background: none;
+  border: none;
+  color: var(--cement);
+  font-size: 1.1rem;
+  transition: color var(--transition);
+}
+.mobile-nav-close:hover { color: var(--kaszmirowy); }
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-nav-links a {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(240,237,232,0.7);
+  border-bottom: 1px solid var(--grys);
+  transition: color var(--transition);
+}
+.mobile-nav-links a:hover { color: var(--kanarek); }
+
+/* ════════════════════════════════════════════
+   SCROLL ANIMATION
+   ════════════════════════════════════════════ */
+.anim-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.anim-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ════════════════════════════════════════════
+   UTILITY
+   ════════════════════════════════════════════ */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0; white-space: nowrap;
+}
+
+/* ════════════════════════════════════════════
+   RESPONSIVE — Mobile First
+   ════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  :root {
+    --fomo-h: 64px;
+    --nav-h: 54px;
+  }
+
+  .nav-links { display: none; }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Product grid: single column on mobile */
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Bigger image on mobile */
+  .p-img-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Huge CTA button — easy to tap with thumb */
+  .btn-add {
+    font-size: 1rem;
+    padding: 1.1rem 1.5rem;
+    min-height: 54px;
+  }
+
+  /* Bigger size dropdown */
+  .p-size-select {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    min-height: 48px;
+  }
+
+  .p-color-dot {
+    width: 28px; height: 28px;
+  }
+
+  .p-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-add { width: 100%; }
+
+  .fomo-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    height: auto;
+    padding: 0.75rem 1rem;
+  }
+
+  .fomo-bar-right { font-size: 0.62rem; }
+
+  .page-hero { padding: 2.5rem 1.25rem 2rem; }
+
+  .products-wrap { padding: 2.5rem 1.25rem 4rem; }
+
+  .navbar { padding: 0 1.25rem; }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+  </style>
 </head>
 <body>
 
-  <!-- ── SKIP LINK ──────────────────────────── -->
-  <a href="#main-content" class="skip-link">Przejdź do treści</a>
+  <a href="#products" class="skip-link">Przejdź do produktów</a>
 
-  <!-- ── ANNOUNCEMENT BAR ───────────────────── -->
-  <div class="announcement" role="banner" aria-live="polite">
-    ✦ &nbsp; Drop I — Kolekcja Założycielska — Limitowana Ilość &nbsp; · &nbsp;
-    Dostawa kurierem w 24h &nbsp; · &nbsp; Darmowy zwrot 30 dni &nbsp; ✦
+  <!-- ════════ FOMO STICKY BANNER ════════════ -->
+  <div class="fomo-bar" role="status" aria-live="polite" id="fomo-bar">
+    <div class="fomo-bar-left">
+      <span class="fomo-dot" aria-hidden="true"></span>
+      ZAMKNIĘCIE ZA:
+      <div class="fomo-timer" aria-label="Licznik zamknięcia sklepu">
+        <span class="fomo-unit" id="fb-days">--</span>
+        <span class="fomo-sep">d</span>
+        <span class="fomo-unit" id="fb-hours">--</span>
+        <span class="fomo-sep">:</span>
+        <span class="fomo-unit" id="fb-mins">--</span>
+        <span class="fomo-sep">:</span>
+        <span class="fomo-unit" id="fb-secs">--</span>
+      </div>
+    </div>
+    <div class="fomo-bar-right">
+      ZOSTAŁO <strong id="stock-count">444</strong> SZTUK
+    </div>
   </div>
 
-  <!-- ── NAVBAR ─────────────────────────────── -->
+  <!-- ════════ NAVBAR ════════════════════════ -->
   <header>
-    <nav class="navbar" role="navigation" aria-label="Nawigacja główna">
-
-      <!-- Hamburger -->
-      <button class="hamburger" onclick="openMobileNav()" aria-label="Otwórz menu" aria-expanded="false" id="hamburger-btn">
+    <nav class="navbar" role="navigation" aria-label="Menu główne">
+      <button
+        class="hamburger"
+        id="hamburger-btn"
+        onclick="openMobile()"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+      >
         <span></span><span></span><span></span>
       </button>
 
-      <!-- Logo -->
-      <a href="#" class="navbar-logo" aria-label="sklepgangstera.pl — Strona główna">
-        SKLEP<span class="gold">GANGSTERA</span>.PL
+      <a href="#" class="navbar-logo" aria-label="sklepgangstera.pl — strona główna">
+        <img src="kanarek.png" alt="" aria-hidden="true">
+        SKLEP<span class="g">GANGSTERA</span>.PL
       </a>
 
-      <!-- Nav Links -->
-      <ul class="navbar-nav" role="list">
-        <li><a href="#bestsellers" class="active" aria-current="page">Kolekcja</a></li>
-        <li><a href="#kanarek">Kanarek Stitch</a></li>
-        <li><a href="#about">O Nas</a></li>
-        <li><a href="#reviews">Opinie</a></li>
-        <li><a href="index1.html">Drops</a></li>
+      <ul class="nav-links" role="list">
+        <li><a href="#products">Kolekcja</a></li>
+        <li><a href="#brand">O Nas</a></li>
+        <li><a href="index.html">Waitlist</a></li>
       </ul>
 
-      <!-- Actions -->
-      <div class="navbar-actions">
+      <div class="nav-actions">
         <button
-          class="navbar-search-btn"
-          onclick="openSearch()"
-          aria-label="Wyszukaj produkty (Ctrl+K)"
-          title="Szukaj (Ctrl+K)"
+          class="cart-btn"
+          onclick="openCart()"
+          id="cart-btn"
+          aria-label="Otwórz koszyk"
+          aria-haspopup="dialog"
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
-        </button>
-        <button class="cart-btn" onclick="openCart()" id="cart-btn" aria-label="Koszyk" aria-haspopup="dialog">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
             <path d="M16 10a4 4 0 01-8 0"/>
           </svg>
-          <span>Koszyk</span>
-          <span class="cart-count" aria-label="Liczba produktów w koszyku" style="display:none">0</span>
+          Koszyk
+          <span class="cart-count" id="cart-count" aria-label="Produkty w koszyku">0</span>
         </button>
       </div>
-
     </nav>
   </header>
 
-  <!-- ── MOBILE NAV ──────────────────────────── -->
+  <!-- ════════ MOBILE NAV ════════════════════ -->
   <nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobilne">
-    <div class="mobile-nav-header">
+    <div class="mobile-nav-head">
       <span class="mobile-nav-logo">SKLEP<span style="color:var(--kanarek)">GANGSTERA</span>.PL</span>
-      <button class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Zamknij menu">✕</button>
+      <button class="mobile-nav-close" onclick="closeMobile()" aria-label="Zamknij menu">✕</button>
     </div>
     <ul class="mobile-nav-links">
-      <li><a href="#bestsellers" onclick="closeMobileNav()">→ Kolekcja</a></li>
-      <li><a href="#kanarek" onclick="closeMobileNav()">→ Kanarek Stitch</a></li>
-      <li><a href="#about" onclick="closeMobileNav()">→ O Nas</a></li>
-      <li><a href="#reviews" onclick="closeMobileNav()">→ Opinie</a></li>
-      <li><a href="index1.html" onclick="closeMobileNav()">→ Drops &amp; Waitlist</a></li>
+      <li><a href="#products" onclick="closeMobile()">Kolekcja Konsekwencja</a></li>
+      <li><a href="#brand" onclick="closeMobile()">O Marce</a></li>
+      <li><a href="index.html" onclick="closeMobile()">← Waitlist</a></li>
     </ul>
   </nav>
 
-  <!-- ── MAIN ────────────────────────────────── -->
-  <main id="main-content">
+  <!-- ════════ MAIN ═══════════════════════════ -->
+  <main>
 
-    <!-- ── HERO ──────────────────────────────── -->
-    <section class="hero" aria-labelledby="store-h1">
-
-      <!-- Left: Media -->
-      <div class="hero-media">
-        <img
-          src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?w=1200&q=85&auto=format&fit=crop"
-          alt="Kaszmirowa Kominiarka Don Wiśnia — flagowy produkt sklepgangstera.pl"
-          class="hero-img"
-          fetchpriority="high"
-          decoding="async"
-        >
-        <div class="hero-img-overlay" aria-hidden="true"></div>
-      </div>
-
-      <!-- Right: Content -->
-      <div class="hero-content">
-        <p class="hero-eyebrow" aria-label="Oznaczenie produktu">
-          KOLEKCJA ZAŁOŻYCIELSKA · DROP I
-        </p>
-        <h1 class="hero-h1" id="store-h1">
-          <span class="line-gold">Kaszmirowa</span><br>
-          <span>Kominiarka</span><br>
-          <span class="line-outline">Don Wiśnia.</span>
-        </h1>
-        <p class="hero-desc">
-          12-nitkowy splot, 100% Kaszmir Grade A z Mongolii.
-          Złoty Szew Kanarku na lewym skronie.
-          Kupujesz raz. Nosisz przez dekadę.
-          Dorzucasz do testamentu.
-        </p>
-        <div class="hero-cta-group">
-          <button
-            class="btn-primary"
-            onclick="addToCart('001-DW'); openCart();"
-            id="hero-buy-btn"
-            aria-label="Kup Kaszmirową Kominiarkę Don Wiśnia za 890 PLN"
-          >
-            Dorzuć do Układu — 890 PLN
-          </button>
-          <a href="#bestsellers" class="btn-secondary">
-            Cała Kolekcja ↓
-          </a>
-        </div>
-        <div class="hero-stats" aria-label="Statystyki marki">
-          <div>
-            <div class="hero-stat-num">2847</div>
-            <div class="hero-stat-label">Wspólników w Układzie</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">100%</div>
-            <div class="hero-stat-label">Kaszmir Grade A</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">72h</div>
-            <div class="hero-stat-label">Dostawa do Drzwi</div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ── CATEGORIES BAR ─────────────────────── -->
-    <div class="categories-bar" role="tablist" aria-label="Filtruj produkty">
-      <button class="cat-btn active" data-cat="all" onclick="filterProducts('all')" role="tab" aria-selected="true" id="cat-all">
-        Wszystko
-      </button>
-      <button class="cat-btn" data-cat="glowy" onclick="filterProducts('glowy')" role="tab" aria-selected="false" id="cat-glowy">
-        Głowy &amp; Twarze
-      </button>
-      <button class="cat-btn" data-cat="gorne" onclick="filterProducts('gorne')" role="tab" aria-selected="false" id="cat-gorne">
-        Góra
-      </button>
-      <button class="cat-btn" data-cat="akcesoria" onclick="filterProducts('akcesoria')" role="tab" aria-selected="false" id="cat-akcesoria">
-        Akcesoria
-      </button>
-    </div>
-
-    <!-- ── PRODUCTS ───────────────────────────── -->
-    <section id="bestsellers" class="products-section" aria-labelledby="products-heading">
-      <div class="section-title-wrap">
-        <span class="section-eyebrow">Kolekcja Założycielska</span>
-        <h2 class="section-h2" id="products-heading">Rzeczy dla Swoich.</h2>
-        <p class="section-sub">
-          Każdy produkt zawiera Złoty Szew Kanarku. Tyle ile jest — mniej niż myślisz.
-        </p>
-      </div>
-      <div class="product-grid" id="product-grid" role="list" aria-label="Lista produktów">
-        <!-- Rendered by JS -->
-      </div>
-    </section>
-
-    <!-- ── KANAREK STITCH ──────────────────────── -->
-    <section id="kanarek" aria-labelledby="kanarek-heading" style="padding: 5rem 2.5rem; background: var(--betoniarz);">
-      <div class="kanarek-section" role="region">
-
-        <div>
-          <div class="kanarek-label">Nasz Signature Motif</div>
-          <h2 class="kanarek-h2" id="kanarek-heading">
-            Złoty Szew<br>Kanarku.
-          </h2>
-          <p class="kanarek-desc">
-            Każdy produkt marki sklepgangstera.pl nosi ukryty detal
-            — hafciany szew w kolorze 24-karatowego złota w kształcie
-            odwróconego trójkąta z monogramem G. Nazywamy go <strong>Kanarek</strong>.
-          </p>
-          <p class="kanarek-desc">
-            Znajdziesz go wewnątrz lewego rękawa — tam, gdzie Szef sprawdza zegarek.
-            Ci, którzy wiedzą — wiedzą. Reszta może tylko domyślać.
-          </p>
-          <ul class="kanarek-features">
-            <li>Haft igłowy 12-nitkowy, złota nić premium</li>
-            <li>Każdy egzemplarz kontrolowany ręcznie przez mistrza haftu</li>
-            <li>Symbol odwróconego trójkąta — dach, który sam sobie zrobiłeś</li>
-            <li>Unikalny dla każdego modelu — inna pozycja, to samo znaczenie</li>
-          </ul>
-        </div>
-
-        <div class="kanarek-visual">
-          <img
-            src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=800&q=85&auto=format&fit=crop"
-            alt="Detal Złotego Szwu Kanarku na kaszmirowej kominierce"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="kanarek-tag-overlay">
-            <div class="kanarek-icon" aria-hidden="true">✦</div>
-            <div class="kanarek-tag-text">
-              Kanarek Stitch
-              <span>Sygnatura na każdym egzemplarzu</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── ABOUT ──────────────────────────────── -->
-    <section id="about" class="about-section" aria-labelledby="about-heading">
-      <span class="section-eyebrow">Kim Jesteśmy</span>
-      <blockquote class="about-quote" id="about-heading">
-        "Nie robimy ubrań dla wszystkich.<br>
-        Robimy je dla <em>tych, którzy wiedzą.</em>"
-      </blockquote>
-      <p class="about-body">
-        sklepgangstera.pl to marka, która powstała z przekonania, że luksusu
-        nie trzeba krzyczeć. Że kaszmirowa kominiarka z Mongolii i ironia
-        z Ursynowa mogą chodzić razem. Że prawdziwy Szef nie potrzebuje logo
-        wielkiego jak kask — potrzebuje czegoś, co trzyma się przez lata.
-        <br><br>
-        Wszystkie materiały premium. Wszystkie projekty tworzone z nastawą
-        "raz a porządnie". Zero taniochy. Zero cringe'u.
-        Tylko Kanarek w środku i spokój sumienia.
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-labelledby="page-h1">
+      <div class="page-hero-eyebrow">Kolekcja Konsekwencja · Drop Live</div>
+      <img
+        src="kanarek.png"
+        alt="Złoty Kanarek — logo sklepgangstera.pl"
+        class="page-hero-kanarek"
+        fetchpriority="high"
+        decoding="async"
+      >
+      <h1 id="page-h1">
+        Złoty <span>Standard</span><br>Ulicy.
+      </h1>
+      <p class="page-hero-sub">
+        Mięsiste materiały o wysokiej gramaturze.
+        Precyzyjny haft Złotego Kanarka na piersi.
+        Dedykowane nadruki na karku.
+        <strong style="color:var(--kanarek)">Tylko 444 sztuki.</strong>
       </p>
-      <div class="about-pills" role="list">
-        <span class="about-pill" role="listitem">Materiały Premium</span>
-        <span class="about-pill" role="listitem">Made in Poland</span>
-        <span class="about-pill" role="listitem">Kanarek Stitch</span>
-        <span class="about-pill" role="listitem">Limitowane Dropy</span>
-        <span class="about-pill" role="listitem">Zero Podróbek</span>
-        <span class="about-pill" role="listitem">Gangsta na Lata</span>
-      </div>
     </section>
 
-    <!-- ── REVIEWS ────────────────────────────── -->
-    <section id="reviews" class="reviews-section" aria-labelledby="reviews-heading">
-      <div class="section-title-wrap">
-        <span class="section-eyebrow">Opinie Wspólników</span>
-        <h2 class="section-h2" id="reviews-heading">Co mówi Rodzina.</h2>
+    <!-- PRODUCTS -->
+    <section id="products" class="products-wrap" aria-labelledby="products-h2">
+      <div class="products-heading">
+        <span class="eyebrow">Kolekcja Konsekwencja — 3 Produkty</span>
+        <h2 id="products-h2">Wybierz swój układ.</h2>
       </div>
-      <div class="reviews-grid" role="list">
 
-        <article class="review-card" role="listitem">
-          <div class="review-stars" aria-label="Ocena: 5 na 5 gwiazdek">★★★★★</div>
-          <p class="review-text">
-            "Kominiarka Don Wiśnia. Moja żona pyta skąd mam kaszmirową kominiarkę.
-            Mówię, że z układu. Nie pyta więcej. 10/10, kupuję drugą na prezent dla
-            wspólnika."
-          </p>
-          <div class="review-author">
-            <div class="review-av" aria-hidden="true">MK</div>
-            <div>
-              <div class="review-author-name">Mariusz K.</div>
-              <div class="review-author-role">#001-DW-KOMINIARKA · Warszawa</div>
+      <div class="product-grid" role="list">
+
+        <!-- ── PRODUKT 1: BLUZA ─────────────────────── -->
+        <article class="p-card anim-in" role="listitem" id="card-bluza" aria-label="Bluza Konsekwencja">
+          <div class="p-badge">Nowość</div>
+
+          <div class="p-img-wrap" id="img-bluza" data-color="black" aria-hidden="true">
+            <div class="p-img-placeholder">🧥</div>
+            <div class="p-img-glow"></div>
+          </div>
+
+          <div class="p-body">
+            <div class="p-cat">Bluza z kapturem · #001-K</div>
+            <div class="p-name">Bluza<br>"Konsekwencja"</div>
+            <div class="p-desc">
+              <strong>Boxy fit.</strong> Ciężka bawełna o wysokiej gramaturze —
+              mięsisty chwyt, który mówi za siebie.
+              Haft Złotego Kanarka na piersi. Nadruk na karku.
+            </div>
+
+            <!-- Color Switcher -->
+            <div class="p-color-row">
+              <span class="p-color-label">Kolor:</span>
+              <div class="p-color-options" role="group" aria-label="Wybór koloru">
+                <button
+                  class="p-color-dot active"
+                  data-color="black"
+                  onclick="switchColor('bluza', 'black', this)"
+                  aria-label="Czarny"
+                  aria-pressed="true"
+                  title="Czarny"
+                ></button>
+                <button
+                  class="p-color-dot"
+                  data-color="white"
+                  onclick="switchColor('bluza', 'white', this)"
+                  aria-label="Biały"
+                  aria-pressed="false"
+                  title="Biały"
+                ></button>
+              </div>
+              <span class="p-color-name" id="color-name-bluza">Czarny</span>
+            </div>
+
+            <!-- Size Dropdown -->
+            <div class="p-size-row">
+              <label class="p-size-label" for="size-bluza">Rozmiar:</label>
+              <select class="p-size-select" id="size-bluza" name="size-bluza">
+                <option value="">— Wybierz rozmiar —</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+              </select>
+            </div>
+
+            <!-- Price & CTA -->
+            <div class="p-footer">
+              <div class="p-price">
+                <span id="price-bluza">— PLN</span>
+                <small>Cena ustalona wkrótce</small>
+              </div>
+              <button
+                class="btn-add"
+                id="btn-bluza"
+                onclick="handleAddToCart('bluza', this)"
+                aria-label="Dodaj bluzę Konsekwencja do koszyka"
+              >
+                DODAJ DO KOSZYKA
+              </button>
             </div>
           </div>
         </article>
 
-        <article class="review-card" role="listitem">
-          <div class="review-stars" aria-label="Ocena: 5 na 5 gwiazdek">★★★★★</div>
-          <p class="review-text">
-            "Kupiłem bluzę Alibaby. 500 gram na metr kwadratowy — poczułem się
-            jakbym miał na sobie zbroję z dobrych marzeń. Kanarek Stitch w środku
-            to poziom detalu, którego nie rozumie 95% marek."
-          </p>
-          <div class="review-author">
-            <div class="review-av" aria-hidden="true">RB</div>
-            <div>
-              <div class="review-author-name">Robert B.</div>
-              <div class="review-author-role">#002-AU-BLUZA · Kraków</div>
+        <!-- ── PRODUKT 2: T-SHIRT ──────────────────── -->
+        <article class="p-card anim-in" role="listitem" id="card-tshirt" aria-label="T-shirt Konsekwencja">
+          <div class="p-badge" style="background: var(--asfalt); color: var(--kanarek); border: 1px solid rgba(201,168,76,0.4);">Drop I</div>
+
+          <div class="p-img-wrap" id="img-tshirt" data-color="black" aria-hidden="true">
+            <div class="p-img-placeholder">👕</div>
+            <div class="p-img-glow"></div>
+          </div>
+
+          <div class="p-body">
+            <div class="p-cat">T-shirt · #002-K</div>
+            <div class="p-name">T-shirt<br>"Konsekwencja"</div>
+            <div class="p-desc">
+              <strong>Oversize.</strong> Gruby materiał, który leży jak trzeba.
+              Precyzyjny haft Złotego Kanarka na piersi.
+              Nadruk na karku.
+            </div>
+
+            <!-- Color Switcher -->
+            <div class="p-color-row">
+              <span class="p-color-label">Kolor:</span>
+              <div class="p-color-options" role="group" aria-label="Wybór koloru">
+                <button
+                  class="p-color-dot active"
+                  data-color="black"
+                  onclick="switchColor('tshirt', 'black', this)"
+                  aria-label="Czarny"
+                  aria-pressed="true"
+                  title="Czarny"
+                ></button>
+                <button
+                  class="p-color-dot"
+                  data-color="white"
+                  onclick="switchColor('tshirt', 'white', this)"
+                  aria-label="Biały"
+                  aria-pressed="false"
+                  title="Biały"
+                ></button>
+              </div>
+              <span class="p-color-name" id="color-name-tshirt">Czarny</span>
+            </div>
+
+            <!-- Size Dropdown -->
+            <div class="p-size-row">
+              <label class="p-size-label" for="size-tshirt">Rozmiar:</label>
+              <select class="p-size-select" id="size-tshirt" name="size-tshirt">
+                <option value="">— Wybierz rozmiar —</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+              </select>
+            </div>
+
+            <!-- Price & CTA -->
+            <div class="p-footer">
+              <div class="p-price">
+                <span id="price-tshirt">— PLN</span>
+                <small>Cena ustalona wkrótce</small>
+              </div>
+              <button
+                class="btn-add"
+                id="btn-tshirt"
+                onclick="handleAddToCart('tshirt', this)"
+                aria-label="Dodaj T-shirt Konsekwencja do koszyka"
+              >
+                DODAJ DO KOSZYKA
+              </button>
             </div>
           </div>
         </article>
 
-        <article class="review-card" role="listitem">
-          <div class="review-stars" aria-label="Ocena: 5 na 5 gwiazdek">★★★★★</div>
-          <p class="review-text">
-            "Skarpety z jedwabnym składem. Myślałam, że to bullshit marketingowy.
-            Założyłam i teraz chodzę po mieszkaniu jakbym była Boss. Kanarek na
-            podeszwie widać przy zdejmowaniu — to jest przeze mnie na zawsze."
-          </p>
-          <div class="review-author">
-            <div class="review-av" aria-hidden="true">AW</div>
-            <div>
-              <div class="review-author-name">Aleksandra W.</div>
-              <div class="review-author-role">#003-SSN-SKARPETY · Gdańsk</div>
+        <!-- ── PRODUKT 3: SNAPBACK ─────────────────── -->
+        <article class="p-card anim-in" role="listitem" id="card-snapback" aria-label="Snapback Konsekwencja">
+          <div class="p-badge" style="background: var(--kanarek-dark); color: var(--kaszmirowy);">Limited</div>
+
+          <div class="p-img-wrap" id="img-snapback" data-color="black" aria-hidden="true">
+            <div class="p-img-placeholder">🧢</div>
+            <div class="p-img-glow"></div>
+          </div>
+
+          <div class="p-body">
+            <div class="p-cat">Snapback · #003-K</div>
+            <div class="p-name">Snapback<br>"Konsekwencja"</div>
+            <div class="p-desc">
+              <strong>Płaski daszek.</strong> Premium struktura czapki.
+              Złoty haft Kanarka z przodu — subtelny, precyzyjny.
+              Regulacja snapback. Jeden rozmiar.
+            </div>
+
+            <!-- Color Switcher -->
+            <div class="p-color-row">
+              <span class="p-color-label">Kolor:</span>
+              <div class="p-color-options" role="group" aria-label="Wybór koloru">
+                <button
+                  class="p-color-dot active"
+                  data-color="black"
+                  onclick="switchColor('snapback', 'black', this)"
+                  aria-label="Czarny"
+                  aria-pressed="true"
+                  title="Czarny"
+                ></button>
+                <button
+                  class="p-color-dot"
+                  data-color="white"
+                  onclick="switchColor('snapback', 'white', this)"
+                  aria-label="Biały"
+                  aria-pressed="false"
+                  title="Biały"
+                ></button>
+              </div>
+              <span class="p-color-name" id="color-name-snapback">Czarny</span>
+            </div>
+
+            <!-- Size — snap = one size -->
+            <div class="p-size-row">
+              <label class="p-size-label" for="size-snapback">Rozmiar:</label>
+              <select class="p-size-select" id="size-snapback" name="size-snapback">
+                <option value="OS">One Size (Regulowany)</option>
+              </select>
+            </div>
+
+            <!-- Price & CTA -->
+            <div class="p-footer">
+              <div class="p-price">
+                <span id="price-snapback">— PLN</span>
+                <small>Cena ustalona wkrótce</small>
+              </div>
+              <button
+                class="btn-add"
+                id="btn-snapback"
+                onclick="handleAddToCart('snapback', this)"
+                aria-label="Dodaj Snapback Konsekwencja do koszyka"
+              >
+                DODAJ DO KOSZYKA
+              </button>
             </div>
           </div>
         </article>
 
-      </div>
+      </div><!-- /product-grid -->
     </section>
 
-    <!-- ── NEWSLETTER ──────────────────────────── -->
-    <section class="newsletter-section" aria-labelledby="newsletter-heading">
-      <div class="newsletter-inner">
-        <span class="section-eyebrow">Wejdź do Rodziny</span>
-        <h2 class="newsletter-h2" id="newsletter-heading">
-          Dowiedz się pierwszy o Dropie.
-        </h2>
-        <p class="newsletter-sub">
-          Zero spamu. Tylko powiadomienia o Dropach, zanim reszta zdąży otworzyć oczy.
-        </p>
-        <form id="newsletter-form" class="newsletter-form" novalidate>
-          <label for="newsletter-email" class="sr-only">Twój adres email</label>
-          <input
-            type="email"
-            id="newsletter-email"
-            class="newsletter-input"
-            placeholder="twoj@email.pl"
-            required
-            autocomplete="email"
-            aria-required="true"
-          >
-          <button type="submit" class="newsletter-btn" id="newsletter-submit-btn">
-            Dołącz ✦
-          </button>
-        </form>
+    <!-- BRAND STRIP -->
+    <section id="brand" class="brand-strip" aria-labelledby="brand-quote">
+      <div class="brand-strip-inner">
+        <div class="brand-strip-label">Złoty Standard Ulicy</div>
+        <blockquote id="brand-quote">
+          "Nie robimy ubrań dla wszystkich.<br>
+          Robimy je dla <em>tych, którzy wiedzą.</em>"
+        </blockquote>
+        <div class="brand-strip-pills" role="list">
+          <div class="brand-pill" role="listitem">Haft na piersi</div>
+          <div class="brand-pill" role="listitem">Nadruk na karku</div>
+          <div class="brand-pill" role="listitem">444 sztuki</div>
+          <div class="brand-pill" role="listitem">Made in Poland</div>
+          <div class="brand-pill" role="listitem">Print-On-Demand</div>
+          <div class="brand-pill" role="listitem">Zero taniochy</div>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ── FOOTER ─────────────────────────────── -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-top">
-
-      <div>
-        <div class="footer-brand-logo">SKLEP<span class="gold">GANGSTERA</span>.PL</div>
-        <p class="footer-tagline">
-          Ironic Luxury Streetwear. Materiały jak paryski dom mody, klimat jak polskie blokowisko.
-          Gangsta na Lata.
-        </p>
-        <div class="footer-social" role="list" aria-label="Social media">
-          <a href="#" class="social-link" role="listitem" aria-label="TikTok sklepgangstera.pl">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.77 1.52V6.75a4.85 4.85 0 01-1-.06z"/>
-            </svg>
-          </a>
-          <a href="#" class="social-link" role="listitem" aria-label="Instagram sklepgangstera.pl">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
-          <a href="#" class="social-link" role="listitem" aria-label="Email kontaktowy">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Sklep</div>
-        <ul class="footer-links">
-          <li><a href="#bestsellers">Kolekcja</a></li>
-          <li><a href="index1.html">Drops &amp; Waitlist</a></li>
-          <li><a href="#kanarek">Kanarek Stitch</a></li>
-          <li><a href="#about">O Nas</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Pomoc</div>
-        <ul class="footer-links">
-          <li><a href="#">Dostawa i Zwroty</a></li>
-          <li><a href="#">Rozmiarówka</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Kontakt</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer-col-title">Prawne</div>
-        <ul class="footer-links">
-          <li><a href="#">Regulamin</a></li>
-          <li><a href="#">Polityka Prywatności</a></li>
-          <li><a href="#">RODO</a></li>
-          <li><a href="#">Cookies</a></li>
-        </ul>
-      </div>
-
-    </div>
-
+  <!-- ════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-logo">SKLEP<span>GANGSTERA</span>.PL</div>
+    <ul class="footer-links">
+      <li><a href="#products">Kolekcja</a></li>
+      <li><a href="index.html">Waitlist</a></li>
+      <li><a href="#">Regulamin</a></li>
+      <li><a href="#">Polityka Prywatności</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
     <div class="footer-bottom">
-      <div class="footer-copyright">
-        &copy; 2025 SKLEPGANGSTERA.PL · Made in Poland. With Attitude.
-      </div>
-      <div class="footer-payment" aria-label="Akceptowane metody płatności">
-        <div class="payment-badge">Visa</div>
-        <div class="payment-badge">Mastercard</div>
-        <div class="payment-badge">Blik</div>
-        <div class="payment-badge">P24</div>
-        <div class="payment-badge">PayPo</div>
-      </div>
+      &copy; 2025 SKLEPGANGSTERA.PL · Made in Poland. With Attitude. · Złoty Standard Ulicy.
     </div>
-
+    <div class="footer-easter">
+      <span>// manifest:</span> Nie ma czegoś takiego jak kaszmirowa kominiarka.
+    </div>
   </footer>
 
-  <!-- ── CART OVERLAY + DRAWER ───────────────── -->
-  <div class="cart-overlay" id="cart-overlay" onclick="closeCart(); closeMobileNav();" aria-hidden="true"></div>
+  <!-- ════════ CART DRAWER ═══════════════════════ -->
+  <div
+    class="cart-overlay"
+    id="cart-overlay"
+    onclick="closeAll()"
+    aria-hidden="true"
+  ></div>
 
-  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-labelledby="cart-title" aria-modal="true">
-
+  <aside
+    class="cart-drawer"
+    id="cart-drawer"
+    role="dialog"
+    aria-labelledby="cart-title-text"
+    aria-modal="true"
+  >
     <div class="cart-header">
-      <h2 class="cart-title" id="cart-title">Twój Układ</h2>
+      <h2 class="cart-title" id="cart-title-text">Twój Układ</h2>
       <button class="cart-close" onclick="closeCart()" aria-label="Zamknij koszyk">✕</button>
     </div>
-
     <div class="cart-body" id="cart-body">
       <!-- Rendered by JS -->
     </div>
-
-    <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-foot" id="cart-foot" style="display:none">
       <div class="cart-subtotal">
         <span class="cart-subtotal-label">Suma zamówienia</span>
-        <span class="cart-subtotal-amount" id="cart-subtotal-amount">0 PLN</span>
+        <span class="cart-subtotal-amount" id="cart-subtotal">0 PLN</span>
       </div>
-      <button class="checkout-btn" onclick="proceedToCheckout()" id="checkout-btn">
+      <button class="btn-checkout" onclick="checkout()" id="btn-checkout">
         Finalizuj Układ ✦
       </button>
-      <p class="cart-shipping-note">Bezpłatna dostawa powyżej 350 PLN · Kurier 72h</p>
+      <p class="cart-note">Darmowa dostawa · Kurier 72h · Zwrot 30 dni</p>
     </div>
-
   </aside>
 
-  <!-- ── SEARCH MODAL ────────────────────────── -->
-  <div class="search-modal" id="search-modal" role="dialog" aria-labelledby="search-label" aria-modal="true">
-    <div class="search-inner">
-      <label id="search-label" class="sr-only">Wyszukaj produkt</label>
-      <div class="search-input-wrap">
-        <input
-          type="search"
-          id="search-input"
-          class="search-input"
-          placeholder="Szukaj w Układzie..."
-          autocomplete="off"
-          spellcheck="false"
-        >
-        <button class="search-close" onclick="closeSearch()" aria-label="Zamknij wyszukiwarkę">✕</button>
-      </div>
-      <p class="search-hint" id="search-hint">Wpisz nazwę produktu, materiał lub numer katalogowy &nbsp;·&nbsp; [ESC] aby zamknąć</p>
-    </div>
-  </div>
+  <!-- ════════ SCRIPTS ════════════════════════════ -->
+  <script>
+  'use strict';
 
-  <!-- ── BACK TO TOP ─────────────────────────── -->
-  <button
-    class="back-to-top"
-    onclick="window.scrollTo({top:0,behavior:'smooth'})"
-    aria-label="Wróć na górę strony"
-    title="Do góry"
-  >↑</button>
+  /* ──────────────────────────────────────────────
+     CART STATE
+  ────────────────────────────────────────────── */
+  const cart = JSON.parse(localStorage.getItem('sg_cart_v2') || '[]');
 
-  <!-- Screen reader only utility -->
-  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;white-space:nowrap}</style>
+  const PRODUCTS_DATA = {
+    bluza: {
+      name: 'Bluza "Konsekwencja"',
+      cat: 'Bluza z kapturem · #001-K',
+      emoji: '🧥',
+      price: null,
+    },
+    tshirt: {
+      name: 'T-shirt "Konsekwencja"',
+      cat: 'T-shirt · #002-K',
+      emoji: '👕',
+      price: null,
+    },
+    snapback: {
+      name: 'Snapback "Konsekwencja"',
+      cat: 'Snapback · #003-K',
+      emoji: '🧢',
+      price: null,
+    },
+  };
 
-  <script src="script.js" defer></script>
+  const selectedColors = { bluza: 'Czarny', tshirt: 'Czarny', snapback: 'Czarny' };
+
+  function saveCart() {
+    localStorage.setItem('sg_cart_v2', JSON.stringify(cart));
+  }
+
+  function formatPLN(n) {
+    return n === null ? '— PLN' : n.toLocaleString('pl-PL') + ' PLN';
+  }
+
+  /* ──────────────────────────────────────────────
+     FOMO COUNTDOWN — ends 5 maja 23:50
+  ────────────────────────────────────────────── */
+  (function initFomoCountdown() {
+    const now = new Date();
+
+    // End date: 5 maja danego roku, 23:50:00
+    // Jeśli już minęło — następny rok
+    function getCloseDate() {
+      let d = new Date(now.getFullYear(), 4, 5, 23, 50, 0, 0); // maj = indeks 4
+      if (Date.now() >= d.getTime()) {
+        d = new Date(now.getFullYear() + 1, 4, 5, 23, 50, 0, 0);
+      }
+      return d;
+    }
+
+    const closeDate = getCloseDate();
+    const pad = n => String(n).padStart(2, '0');
+
+    function tick() {
+      const diff = closeDate - Date.now();
+      if (diff <= 0) {
+        ['fb-days','fb-hours','fb-mins','fb-secs'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = '00';
+        });
+        // sklep zamknięty
+        return;
+      }
+
+      const days  = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins  = Math.floor((diff % 3600000)  / 60000);
+      const secs  = Math.floor((diff % 60000)    / 1000);
+
+      const setEl = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = pad(val);
+      };
+
+      setEl('fb-days',  days);
+      setEl('fb-hours', hours);
+      setEl('fb-mins',  mins);
+      setEl('fb-secs',  secs);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  /* ──────────────────────────────────────────────
+     COLOR SWITCHER
+  ────────────────────────────────────────────── */
+  function switchColor(productId, color, btn) {
+    const wrap = btn.closest('.p-color-options');
+    wrap.querySelectorAll('.p-color-dot').forEach(d => {
+      d.classList.remove('active');
+      d.setAttribute('aria-pressed', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
+
+    const colorPL = color === 'black' ? 'Czarny' : 'Biały';
+    selectedColors[productId] = colorPL;
+
+    const nameEl = document.getElementById('color-name-' + productId);
+    if (nameEl) nameEl.textContent = colorPL;
+
+    const imgWrap = document.getElementById('img-' + productId);
+    if (imgWrap) imgWrap.setAttribute('data-color', color);
+  }
+
+  /* ──────────────────────────────────────────────
+     ADD TO CART
+  ────────────────────────────────────────────── */
+  function handleAddToCart(productId, btn) {
+    const sizeEl = document.getElementById('size-' + productId);
+    const size   = sizeEl ? sizeEl.value : 'OS';
+
+    if (!size) {
+      sizeEl.style.borderColor = '#c9a84c';
+      sizeEl.focus();
+      showToast('Wybierz rozmiar!');
+      setTimeout(() => { sizeEl.style.borderColor = ''; }, 2000);
+      return;
+    }
+
+    const p        = PRODUCTS_DATA[productId];
+    const color    = selectedColors[productId] || 'Czarny';
+    const cartKey  = `${productId}-${color}-${size}`;
+
+    const existing = cart.find(i => i.key === cartKey);
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({
+        key:   cartKey,
+        id:    productId,
+        name:  p.name,
+        cat:   p.cat,
+        emoji: p.emoji,
+        color,
+        size,
+        price: p.price,
+        qty:   1,
+      });
+    }
+
+    saveCart();
+    updateCartCount();
+    renderCart();
+    showToast(`${p.emoji} ${p.name} — dorzucono do układu ✦`);
+
+    // Button feedback
+    const orig = btn.textContent;
+    btn.textContent = 'DODANO ✦';
+    btn.style.background = 'var(--kanarek-dark)';
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.style.background = '';
+    }, 1500);
+  }
+
+  /* ──────────────────────────────────────────────
+     CART UI
+  ────────────────────────────────────────────── */
+  function getTotal() {
+    return cart.reduce((sum, i) => sum + (i.price || 0) * i.qty, 0);
+  }
+
+  function updateCartCount() {
+    const count = cart.reduce((s, i) => s + i.qty, 0);
+    const el = document.getElementById('cart-count');
+    if (!el) return;
+    el.textContent = count;
+    el.style.display = count > 0 ? 'flex' : 'none';
+  }
+
+  function renderCart() {
+    const body = document.getElementById('cart-body');
+    const foot = document.getElementById('cart-foot');
+    if (!body) return;
+
+    if (cart.length === 0) {
+      body.innerHTML = `
+        <div class="cart-empty">
+          <div class="cart-empty-icon">🖤</div>
+          <div class="cart-empty-text">Układ pusty, Szefie.</div>
+          <div class="cart-empty-sub">Czas coś wziąć.</div>
+        </div>`;
+      if (foot) foot.style.display = 'none';
+      return;
+    }
+
+    if (foot) foot.style.display = 'block';
+
+    body.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <div class="cart-item-img">${item.emoji}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-meta">${item.color} · ${item.size}</div>
+          <div class="cart-item-qty">
+            <button class="qty-btn" onclick="changeQty('${item.key}', -1)" aria-label="Zmniejsz">−</button>
+            <span class="qty-num">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty('${item.key}', 1)" aria-label="Zwiększ">+</button>
+            <button class="qty-btn" onclick="removeItem('${item.key}')" aria-label="Usuń" style="margin-left:auto;color:var(--cement)">✕</button>
+          </div>
+        </div>
+        <div class="cart-item-price">${item.price ? (item.price * item.qty).toLocaleString('pl-PL') + ' PLN' : '— PLN'}</div>
+      </div>`).join('');
+
+    const subtotalEl = document.getElementById('cart-subtotal');
+    if (subtotalEl) {
+      const total = getTotal();
+      subtotalEl.textContent = total > 0 ? total.toLocaleString('pl-PL') + ' PLN' : '— PLN';
+    }
+  }
+
+  function changeQty(key, delta) {
+    const item = cart.find(i => i.key === key);
+    if (!item) return;
+    item.qty = Math.max(1, item.qty + delta);
+    saveCart();
+    renderCart();
+    updateCartCount();
+  }
+
+  function removeItem(key) {
+    const idx = cart.findIndex(i => i.key === key);
+    if (idx > -1) cart.splice(idx, 1);
+    saveCart();
+    renderCart();
+    updateCartCount();
+  }
+
+  function openCart() {
+    document.getElementById('cart-overlay').classList.add('open');
+    document.getElementById('cart-drawer').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCart() {
+    document.getElementById('cart-overlay').classList.remove('open');
+    document.getElementById('cart-drawer').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function checkout() {
+    if (cart.length === 0) { showToast('Koszyk pusty, Szefie.'); return; }
+    showToast('Przejście do płatności... ✦');
+    // TODO: integracja z bramką płatności
+  }
+
+  /* ──────────────────────────────────────────────
+     MOBILE NAV
+  ────────────────────────────────────────────── */
+  function openMobile() {
+    document.getElementById('mobile-nav').classList.add('open');
+    document.getElementById('cart-overlay').classList.add('open');
+    document.getElementById('hamburger-btn').setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobile() {
+    document.getElementById('mobile-nav').classList.remove('open');
+    document.getElementById('cart-overlay').classList.remove('open');
+    document.getElementById('hamburger-btn').setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  function closeAll() {
+    closeCart();
+    closeMobile();
+  }
+
+  /* ──────────────────────────────────────────────
+     KEYBOARD
+  ────────────────────────────────────────────── */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeAll();
+  });
+
+  /* ──────────────────────────────────────────────
+     TOAST
+  ────────────────────────────────────────────── */
+  function showToast(msg) {
+    const old = document.querySelector('.toast');
+    if (old) old.remove();
+
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.textContent = msg;
+    document.body.appendChild(t);
+
+    requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add('show')));
+    setTimeout(() => {
+      t.classList.remove('show');
+      setTimeout(() => t.remove(), 400);
+    }, 2800);
+  }
+
+  /* ──────────────────────────────────────────────
+     SCROLL ANIMATIONS
+  ────────────────────────────────────────────── */
+  function initAnimations() {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 120);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.anim-in').forEach(el => obs.observe(el));
+  }
+
+  /* ──────────────────────────────────────────────
+     INIT
+  ────────────────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+    renderCart();
+    initAnimations();
+  });
+  </script>
 </body>
 </html>
